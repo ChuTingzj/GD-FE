@@ -1,9 +1,42 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import {resolve} from 'node:path'
+import UnoCSS from 'unocss/vite'
+import presetAttributify from '@unocss/preset-attributify'
+import presetIcons from '@unocss/preset-icons'
+import presetUno from '@unocss/preset-uno'
+import transformerDirectives  from '@unocss/transformer-directives'
+import {resolve} from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [UnoCSS({
+    presets: [presetUno(), presetAttributify(), presetIcons({
+      scale: 3,
+      cdn: 'https://esm.sh/'
+    })],
+    transformers:[transformerDirectives()],
+    rules:[
+      [/^transition-(\w+)$/,match=>({'transition-property':match[1]})],
+      ['transition-width-transform',{'transition-property':'transform width'}]
+    ],
+    theme:{
+      colors:{
+        light:'#d1d5db',
+        dark:'#111827',
+        antBlue:'#1677ff'
+      },
+      extend:{
+        transitionProperty:{
+          'width':'width'
+        }
+      }
+    },
+    shortcuts:{
+      'normal-transition':'transition duration-500 ease-linear',
+      'normal-flex':'flex justify-center items-center',
+      'normal-indicator-action':'transition duration-400 ease-linear',
+      'normal-indicator-bb':'border-b-solid border-blue-9'
+    }
+  }),react()],
   resolve:{
     alias:[
       {
