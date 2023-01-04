@@ -5,7 +5,7 @@ const tags = ['综合','关注','后端','前端','Android','iOS','人工智能'
 export const useTagBar = () => {
   const indicatorTagBar = useRef<LegacyRef<HTMLSpanElement>>()
   const onTagItemClick = (item:string,index:number,event:MouseEvent) => {
-    const targetLeft = (event.target as Element).getBoundingClientRect().left
+    const targetLeft = (event.target as HTMLElement).offsetLeft;
     const parentWidth = (event.target as Element).parentElement?.getBoundingClientRect().width ?? 1536
     let width:number
     if(isEnglish(item)){
