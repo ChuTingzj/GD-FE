@@ -39,7 +39,8 @@ export default defineConfig({
       'normal-flex':'flex justify-center items-center',
       'normal-indicator-action':'transition duration-400 ease-linear',
       'normal-indicator-bb':'border-b-solid border-blue-9',
-      'normal-bb':'border-b-2 border-gray-200 py-2'
+      'normal-bb':'border-b-2 border-gray-200 py-2',
+      'normal-br':'border-r border-gray-400 pr-1'
     }
   }),react()],
   resolve:{

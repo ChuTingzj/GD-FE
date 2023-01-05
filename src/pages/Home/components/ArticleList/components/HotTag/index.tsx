@@ -18,7 +18,7 @@ export const HotTag: React.FC<HotTagProps> = (props) => {
       </div>
       <div className="hotTag-bottom py-2">
         {
-          tagList.map(item => (<Tag className="m-1" key={item} color={colorList[Math.round(Math.random() * 11)]}>{item}</Tag>))
+          tagList.map(item => (<Tag className="m-1 cursor-pointer" key={item} color={colorList[Math.round(Math.random() * 11)]}>{item}</Tag>))
         }
       </div>
     </div>
