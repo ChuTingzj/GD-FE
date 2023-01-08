@@ -10,7 +10,7 @@ const globalSlice = createSlice({
   name:'global',
   initialState,
   reducers:{
-    changeIsReachBottom:(state,action) => {
+    changeIsReachBottom:(state,action:{payload:boolean,type:string}) => {
       state.isReachBottom = action.payload
     }
   }

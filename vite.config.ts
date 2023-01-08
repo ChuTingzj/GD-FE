@@ -30,7 +30,8 @@ export default defineConfig({
       },
       extend:{
         transitionProperty:{
-          'width':'width'
+          'width':'width',
+          'left':'left'
         }
       }
     },

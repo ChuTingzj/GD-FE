@@ -15,6 +15,8 @@ export const useReachBottom = () => {
       if(Math.round(clientHeight + scrollTop) === scrollHeight){
          dispatch(changeIsReachBottom(true))
          console.log('滚动条触底了')
+      }else{
+         dispatch(changeIsReachBottom(false))
       }
    }))
 }

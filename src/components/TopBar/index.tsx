@@ -9,13 +9,14 @@ interface TopBarProps {
   indicatorBar: LegacyRef<HTMLSpanElement>
   onNavItemClick: (index: number) => void
   dropDownItems: MenuProps["items"]
+  goHome: () => void
 }
 export const TopBar: FC<TopBarProps> = (props) => {
-  const { nav, indicatorBar, onNavItemClick, dropDownItems } = props
+  const { nav, indicatorBar, onNavItemClick, dropDownItems, goHome } = props
   return (
     <div className="bg-white grid grid-cols-3 items-center p-3 normal-transition relative dark:bg-dark">
       <div className='normal-flex gap-2'>
-        <div className='cursor-pointer justify-self-end normal-flex gap-1'>
+        <div className='cursor-pointer justify-self-end normal-flex gap-1' onClick={goHome}>
           <SlackCircleFilled className='dark:text-white' style={{ fontSize: '30px' }} />
           <div className='font-bold text-xl font-mono dark:text-light'>稀土掘金</div>
         </div>
@@ -33,7 +34,7 @@ export const TopBar: FC<TopBarProps> = (props) => {
         <Dropdown.Button menu={{ items: dropDownItems }} type='primary' icon={<DownOutlined />} trigger={['click']}>创作者中心</Dropdown.Button>
         <div className='normal-flex gap-6'>
           <ThemeSwitch />
-          <BellIcon />
+          <BellIcon className='cursor-pointer' />
           <div className='cursor-pointer'>
             <Avatar icon={<UserOutlined />}></Avatar>
           </div>
