@@ -1,4 +1,4 @@
-import type {ArticleItemProps} from '@/pages/Home/components/ArticleList/components'
+import type {ArticleItemProps} from '../../components/ArticleList/components'
 export const tagList = ['javascript','typescript','rust','go','java','php','vue','react','docker','css','mysql']
 export const colorList = ['magenta','red','volcano','orange','gold','lime','green','cyan','blue','geekblue','purple']
 export const imgList = [

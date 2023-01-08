@@ -1,4 +1,4 @@
-import {useRef,useEffect} from 'react'
+import {useRef} from 'react'
 import type {LegacyRef,MouseEvent} from 'react'
 const tags = ['综合','关注','后端','前端','Android','iOS','人工智能','开发工具','代码人生','阅读']
 export const useTagBar = () => {
