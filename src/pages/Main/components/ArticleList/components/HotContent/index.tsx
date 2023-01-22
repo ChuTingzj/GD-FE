@@ -1,8 +1,9 @@
 import { Carousel, Image, Badge } from 'antd'
 import { HotHeader } from '@/components'
+import { CarouselEntity, ArticleEntity } from '@/api'
 interface HotContentProps {
-  imgList: Array<{ src: string }>
-  hotContentList: Array<string>
+  imgList: Array<CarouselEntity>
+  hotContentList: Array<ArticleEntity>
   hotColorList: Array<string>
 }
 export const HotContent: React.FC<HotContentProps> = (props) => {
@@ -13,12 +14,12 @@ export const HotContent: React.FC<HotContentProps> = (props) => {
       <div className="hotContent-middle normal-bb">
         <Carousel autoplay>
           {
-            imgList.map(item => (
+            Array.isArray(imgList) && imgList.map(item => (
               <Image
-                key={item.src}
+                key={item.id}
                 width={'100%'}
                 height={150}
-                src={item.src}
+                src={item.img_url}
               />
             ))
           }
@@ -26,10 +27,10 @@ export const HotContent: React.FC<HotContentProps> = (props) => {
       </div>
       <div className="hotContent-bottom py-2 flex flex-col justify-center">
         {
-          hotContentList.map((item, index) => (
-            <div className='flex items-center gap-2 py-2 normal-bb cursor-pointer hover:bg-gray-100 hover:text-black' key={item}>
-              {index <= 2 ? <Badge count={index + 1} showZero color={hotColorList[index]} /> : ''}
-              <div className="text-13" style={{ marginLeft: index <= 2 ? '' : '30px' }}>{item}</div>
+          Array.isArray(hotContentList) && hotContentList.map((item, index) => (
+            <div className='flex items-center gap-2 py-2 normal-bb cursor-pointer hover:bg-gray-100 hover:text-black' key={item.id}>
+              <Badge count={index + 1} showZero color={hotColorList[index]} />
+              <div className="text-13">{item.article_title}</div>
             </div>
           ))
         }

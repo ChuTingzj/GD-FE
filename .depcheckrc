@@ -1,1 +1,1 @@
-ignores: ["uno.css"]
+ignores: ["uno.css","depcheck"]
