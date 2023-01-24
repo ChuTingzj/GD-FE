@@ -1,37 +1,38 @@
-import { useRef } from 'react'
-import type { LegacyRef } from 'react'
 import type { MenuProps } from 'antd'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { PenIcon, NoteBookIcon, CodeIcon } from '@/components'
-const nav = ['首页', '问答', '专栏', '标签', '发现']
-const dropDownItems: MenuProps['items'] = [
-  {
-    label: '写文章',
-    key: '1',
-    icon: <PenIcon />
-  },
-  {
-    label: '写笔记',
-    key: '2',
-    icon: <NoteBookIcon />
-  },
-  {
-    label: '写代码',
-    key: '3',
-    icon: <CodeIcon />
-  }
-]
+const nav = ['Main.TopBar.list.1', 'Main.TopBar.list.2', 'Main.TopBar.list.3', 'Main.TopBar.list.4', 'Main.TopBar.list.5']
+
 export const useTopBar = () => {
-  const indicatorBar = useRef<LegacyRef<HTMLSpanElement>>()
+  const { t } = useTranslation()
   const navigate = useNavigate()
-  const onNavItemClick = (index: number) => {
-    (indicatorBar.current as any as HTMLElement).style.setProperty('transform', `translateX(${52 * index}px)`)
+  const dropDownItems: MenuProps['items'] = [
+    {
+      label: t('Main.TopBar.DropDownMenu.menu.1'),
+      key: '1',
+      icon: <PenIcon />
+    },
+    {
+      label: t('Main.TopBar.DropDownMenu.menu.2'),
+      key: '2',
+      icon: <NoteBookIcon />
+    },
+    {
+      label: t('Main.TopBar.DropDownMenu.menu.3'),
+      key: '3',
+      icon: <CodeIcon />
+    }
+  ]
+  const onNavItemClick = (event: MouseEvent) => {
+    const siblings = Array.from((event.target as HTMLElement).parentNode?.childNodes ?? []);
+    siblings.forEach(item => (item as HTMLElement).classList.remove('clicked'));
+    (event.target as HTMLElement).classList.add('clicked')
   }
   const goHome = () => navigate('/')
   return {
     nav,
     dropDownItems,
-    indicatorBar,
     onNavItemClick,
     goHome
   }

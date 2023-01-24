@@ -1,9 +1,9 @@
 import { Suspense } from 'react'
-import { Routes, Route, HashRouter } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { HomeView, ArticleDetailView, MainView } from './routes'
 export default function RouterView() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Suspense>
         <Routes>
           <Route path='/' element={<HomeView />}>
@@ -12,6 +12,6 @@ export default function RouterView() {
           </Route>
         </Routes>
       </Suspense>
-    </HashRouter>
+    </BrowserRouter>
   )
 }

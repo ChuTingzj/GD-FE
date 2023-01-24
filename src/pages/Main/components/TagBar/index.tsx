@@ -9,7 +9,7 @@ export const TagBar: FC<TagBarProps> = (props) => {
   const { tags, indicatorTagBar, firstSpan, onTagItemClick } = props
   return (
     <div className='bg-white -ml-98 normal-flex gap-4 mt-4 p-3 sticky top-0 normal-transition dark:bg-dark dark:text-light'>
-      <span ref={indicatorTagBar} className='bg-blue-5 transition-width-transform duration-400 ease-linear normal-indicator-bb pointer-events-none bg-opacity-75 absolute h-full w-8 top-0'></span>
+      <span ref={indicatorTagBar} className='bg-blue-5 indicator-width-transform-action normal-indicator-bb pointer-events-none bg-opacity-75 absolute h-full w-8 top-0'></span>
       <span ref={firstSpan} onClick={onTagItemClick} className='cursor-pointer'>综合</span>
       <span onClick={onTagItemClick} className='cursor-pointer'>关注</span>
       {

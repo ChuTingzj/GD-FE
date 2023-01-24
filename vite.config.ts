@@ -54,6 +54,7 @@ export default ({ mode }) => defineConfig({
       'normal-theme': 'normal-transition bg-white dark:bg-dark dark:text-light',
       'normal-flex': 'flex justify-center items-center',
       'normal-indicator-action': 'transition duration-400 ease-linear',
+      'indicator-width-transform-action': 'transition-width-transform duration-400 ease-linear',
       'normal-indicator-bb': 'border-b-solid border-blue-9',
       'normal-bb': 'border-b-2 border-gray-200 py-2',
       'normal-br': 'border-r border-gray-400 pr-1',

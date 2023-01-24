@@ -1,0 +1,23 @@
+{
+  "Main": {
+    "TopBar": {
+      "title": "Technical Forum",
+      "list": {
+        "1": "Home",
+        "2": "Q&A",
+        "3": "Spec",
+        "4": "Tag",
+        "5": "Find"
+      },
+      "hint": "Please type in keyword",
+      "DropDownMenu": {
+        "title": "Creator Center",
+        "menu": {
+          "1": "writing",
+          "2": "noting",
+          "3": "coding"
+        }
+      }
+    }
+  }
+}
