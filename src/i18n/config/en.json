@@ -18,6 +18,18 @@
           "3": "coding"
         }
       }
+    },
+    "TagBar": {
+      "1": "BackEnd",
+      "2": "FrontEnd",
+      "3": "Android",
+      "4": "IOS",
+      "5": "AI",
+      "6": "DevTools",
+      "7": "CodeLife",
+      "8": "Reading",
+      "9": "synthesize",
+      "10": "followed"
     }
   }
 }

@@ -1,20 +1,20 @@
 import type { FC, LegacyRef, MouseEvent } from 'react'
+import { useTranslation } from 'react-i18next'
 interface TagBarProps {
   tags: Array<string>
-  indicatorTagBar: LegacyRef<HTMLSpanElement>
   firstSpan: LegacyRef<HTMLSpanElement>
-  onTagItemClick: (event: MouseEvent) => void
+  onTagItemClick: (event: MouseEvent, key: string) => void
 }
 export const TagBar: FC<TagBarProps> = (props) => {
-  const { tags, indicatorTagBar, firstSpan, onTagItemClick } = props
+  const { t } = useTranslation()
+  const { tags, firstSpan, onTagItemClick } = props
   return (
-    <div className='bg-white -ml-98 normal-flex gap-4 mt-4 p-3 sticky top-0 normal-transition dark:bg-dark dark:text-light'>
-      <span ref={indicatorTagBar} className='bg-blue-5 indicator-width-transform-action normal-indicator-bb pointer-events-none bg-opacity-75 absolute h-full w-8 top-0'></span>
-      <span ref={firstSpan} onClick={onTagItemClick} className='cursor-pointer'>综合</span>
-      <span onClick={onTagItemClick} className='cursor-pointer'>关注</span>
+    <div className='bg-white normal-flex gap-16 mt-4 p-y-3 relative normal-transition dark:bg-dark dark:text-light'>
+      <span ref={firstSpan} onClick={(event) => onTagItemClick(event, 'Main.TagBar.9')} className='cursor-pointer clicked'>{t("Main.TagBar.9")}</span>
+      <span onClick={(event) => onTagItemClick(event, 'Main.TagBar.10')} className='cursor-pointer'>{t("Main.TagBar.10")}</span>
       {
         tags.map((item) => (
-          <span onClick={onTagItemClick} className='cursor-pointer' key={item}>{item}</span>
+          <span onClick={(event) => onTagItemClick(event, item)} className='cursor-pointer' key={item}>{t(item as any)}</span>
         ))
       }
     </div>

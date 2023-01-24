@@ -15,7 +15,7 @@ export const TopBar: FC<TopBarProps> = (props) => {
   const { t, i18n } = useTranslation()
   const { nav, onNavItemClick, dropDownItems, goHome } = props
   return (
-    <div className="bg-white grid grid-cols-3 items-center p-3 normal-transition relative dark:bg-dark">
+    <div className="bg-white grid grid-cols-3 items-center p-y-3 normal-transition relative dark:bg-dark">
       <div className='normal-flex gap-2'>
         <div className='cursor-pointer justify-self-end normal-flex gap-1' onClick={goHome}>
           <SlackCircleFilled className='dark:text-white' style={{ fontSize: '30px' }} />
@@ -24,7 +24,7 @@ export const TopBar: FC<TopBarProps> = (props) => {
         <div className='flex gap-5 relative'>
           {
             nav.map((item, index) => (
-              <span onClick={onNavItemClick} className={'cursor-pointer font-bold dark:text-light hover:text-antBlue ' + (index === 0 ? 'clicked' : '')} key={item}>{t(item as any)}</span>
+              <span onClick={onNavItemClick} className={'cursor-pointer normal-transition font-bold dark:text-light hover:text-antBlue ' + (index === 0 ? 'clicked' : '')} key={item}>{t(item as any)}</span>
             ))
           }
         </div>
