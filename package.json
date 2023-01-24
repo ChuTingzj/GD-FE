@@ -15,7 +15,6 @@
     "test-ui:watch": "vitest --ui",
     "test-ui": "vitest run --ui",
     "build": "tsc && vite build",
-    "build-server":"pnpm i && pnpm run build ",
     "preview": "vite preview",
     "check:modules": "depcheck --ignore-dirs=dist,.history"
   },

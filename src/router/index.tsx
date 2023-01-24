@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HomeView, ArticleDetailView, MainView } from './routes'
 export default function RouterView() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <Suspense>
         <Routes>
           <Route path='/' element={<HomeView />}>
