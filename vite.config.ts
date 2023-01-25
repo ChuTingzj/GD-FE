@@ -8,7 +8,6 @@ import transformerDirectives from '@unocss/transformer-directives'
 import { resolve } from 'path'
 // https://vitejs.dev/config/
 export default ({ mode }) => defineConfig({
-  base: './',
   server: {
     proxy: {
       '/api': {
