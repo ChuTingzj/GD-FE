@@ -10,11 +10,11 @@ export const TagBar: FC<TagBarProps> = (props) => {
   const { tags, firstSpan, onTagItemClick } = props
   return (
     <div className='bg-white normal-flex gap-16 mt-4 p-y-3 relative normal-transition dark:bg-dark dark:text-light'>
-      <span ref={firstSpan} onClick={(event) => onTagItemClick(event, 'Main.TagBar.9')} className='cursor-pointer clicked'>{t("Main.TagBar.9")}</span>
-      <span onClick={(event) => onTagItemClick(event, 'Main.TagBar.10')} className='cursor-pointer'>{t("Main.TagBar.10")}</span>
+      <span ref={firstSpan} onClick={(event) => onTagItemClick(event, 'Main.TagBar.9')} className='cursor-pointer clicked hover:text-antBlue'>{t("Main.TagBar.9")}</span>
+      <span onClick={(event) => onTagItemClick(event, 'Main.TagBar.10')} className='cursor-pointer hover:text-antBlue'>{t("Main.TagBar.10")}</span>
       {
         tags.map((item) => (
-          <span onClick={(event) => onTagItemClick(event, item)} className='cursor-pointer' key={item}>{t(item as any)}</span>
+          <span onClick={(event) => onTagItemClick(event, item)} className='cursor-pointer hover:text-antBlue' key={item}>{t(item as any)}</span>
         ))
       }
     </div>

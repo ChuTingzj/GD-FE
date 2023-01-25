@@ -24,7 +24,7 @@ export const TopBar: FC<TopBarProps> = (props) => {
         <div className='flex gap-5 relative'>
           {
             nav.map((item, index) => (
-              <span onClick={onNavItemClick} className={'cursor-pointer normal-transition font-bold dark:text-light hover:text-antBlue ' + (index === 0 ? 'clicked' : '')} key={item}>{t(item as any)}</span>
+              <span onClick={onNavItemClick} className={'cursor-pointer font-bold dark:text-light hover:text-antBlue ' + (index === 0 ? 'clicked' : '')} key={item}>{t(item as any)}</span>
             ))
           }
         </div>
