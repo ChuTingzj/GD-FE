@@ -14,7 +14,7 @@
     "test": "vitest run",
     "test-ui:watch": "vitest --ui",
     "test-ui": "vitest run --ui",
-    "build": "tsc && vite build",
+    "build": "rm -rf ./dist && tsc && vite build",
     "preview": "vite preview",
     "check:modules": "depcheck --ignore-dirs=dist,.history"
   },

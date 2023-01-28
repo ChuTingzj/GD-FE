@@ -1,9 +1,9 @@
 import React from "react";
 import { Image } from 'antd'
 import { EyeOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons'
-import * as dayjs from 'dayjs';
-import * as relativeTime from 'dayjs/plugin/relativeTime'
-import * as utc from 'dayjs/plugin/utc';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime'
+import utc from 'dayjs/plugin/utc';
 import type { ArticleEntity } from '@/api';
 dayjs.extend(relativeTime);
 dayjs.extend(utc);

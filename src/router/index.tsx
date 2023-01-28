@@ -6,9 +6,9 @@ export default function RouterView() {
     <BrowserRouter>
       <Suspense>
         <Routes>
-          <Route path='/' element={<HomeView />}>
-            <Route element={<MainView />} index></Route>
-            <Route path='/post/:articleId' element={<ArticleDetailView />}></Route>
+          <Route path={'/'} element={<HomeView />}>
+            <Route index element={<MainView />} ></Route>
+            <Route path='post/:articleId' element={<ArticleDetailView />}></Route>
           </Route>
         </Routes>
       </Suspense>

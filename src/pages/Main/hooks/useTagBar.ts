@@ -1,13 +1,11 @@
-import { useRef, useEffect } from 'react'
-import type { LegacyRef, MouseEvent } from 'react'
+import type { MouseEvent } from 'react'
 import i18next from 'i18next'
 import { useDispatch } from 'react-redux'
 import { changeListArgs } from '@/store/features'
 import type { AppDispatch } from '@/store'
+const tags = ["Main.TagBar.1", "Main.TagBar.2", "Main.TagBar.3", "Main.TagBar.4", "Main.TagBar.5", "Main.TagBar.6", "Main.TagBar.7", "Main.TagBar.8"]
 export const useTagBar = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const firstSpan = useRef<LegacyRef<HTMLSpanElement>>()
-  const tags = ["Main.TagBar.1", "Main.TagBar.2", "Main.TagBar.3", "Main.TagBar.4", "Main.TagBar.5", "Main.TagBar.6", "Main.TagBar.7", "Main.TagBar.8"]
   const onTagItemClick = (event: MouseEvent, key: string) => {
     const siblings = Array.from((event.target as HTMLElement).parentNode?.childNodes ?? []);
     siblings.forEach(item => (item as HTMLElement).classList.remove('clicked'));
@@ -20,7 +18,6 @@ export const useTagBar = () => {
   }
   return {
     tags,
-    firstSpan,
     onTagItemClick
   }
 }

@@ -17,6 +17,9 @@ export default ({ mode }) => defineConfig({
       }
     }
   },
+  build: {
+    sourcemap: true
+  },
   plugins: [UnoCSS({
     presets: [presetUno(), presetAttributify(), presetIcons({
       scale: 3,

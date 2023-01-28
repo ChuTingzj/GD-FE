@@ -21,7 +21,7 @@ export const ArticleList: FC = () => {
             <div className='cursor-pointer'>热榜</div>
           </div>
           {
-            articleList.map((item, index) => (
+            Array.isArray(articleList) && articleList.map((item, index) => (
               <ArticleItem key={index} {...item} />
             ))
           }
