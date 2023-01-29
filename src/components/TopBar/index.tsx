@@ -1,4 +1,4 @@
-import type { FC, LegacyRef, MouseEventHandler } from 'react'
+import type { FC, MouseEventHandler } from 'react'
 import { Input, Dropdown, Avatar } from 'antd'
 import type { MenuProps } from 'antd'
 import { SlackCircleFilled, DownOutlined, UserOutlined } from '@ant-design/icons'

@@ -34,7 +34,8 @@ export default ({ mode }) => defineConfig({
       [/^text-(\d+)$/, match => ({ 'font-size': match[1] + 'px' })],
       [/^contain-intrinsic-size-(\d+)$/, match => ({ ' contain-intrinsic-size': match[1] + 'px' })],
       [/^animate-vibe$/, () => ({ animation: 'vibe 0.8s' })],
-      [/^min-width-(\d+)$/, (match) => ({ 'min-width': match[1] + 'px' })]
+      [/^min-width-(\d+)$/, (match) => ({ 'min-width': match[1] + 'px' })],
+      [/^max-height-(\d+)$/, (match) => ({ 'max-height': match[1] + 'px' })]
     ],
     theme: {
       colors: {
@@ -60,7 +61,8 @@ export default ({ mode }) => defineConfig({
       'normal-indicator-bb': 'border-b-solid border-blue-9',
       'normal-bb': 'border-b-2 border-gray-200 py-2',
       'normal-br': 'border-r border-gray-400 pr-1',
-      'detail-util-bar': 'normal-theme w-48p h-48p rounded-full normal-flex text-lg cursor-pointer hover:text-antBlue'
+      'detail-util-bar': 'normal-theme w-48p h-48p rounded-full normal-flex text-lg cursor-pointer hover:text-antBlue',
+      'detail-index-bar-articleInfo': 'w-25p h-25p rounded-full bg-blue-200 text-blue-400 normal-flex'
     }
   }), react()],
   resolve: {

@@ -16,3 +16,14 @@ body{
 .clicked{
   color:#1677ff !important;
 }
+.directory::-webkit-scrollbar {
+  width: 5px;
+}
+
+.directory::-webkit-scrollbar-thumb {
+  background-color: #e4e6eb;
+  border-radius: 10px;
+}
+.directory::-webkit-scrollbar-track {
+  background-color: transparent;
+}

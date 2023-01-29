@@ -26,7 +26,7 @@ export const ArticleItem: React.FC<ArticleEntity> = (props) => {
         <div className="article-item-top-author normal-br hover:text-antBlue cursor-pointer">{author.user_name}</div>
         <div className="article-item-top-pubTime text-gray-400 normal-br">{dayjs.utc(createdAt).fromNow()}</div>
         {
-          category_list.map((item, index) => (
+          Array.isArray(category_list) && category_list.map((item, index) => (
             <div className="normal-flex gap-2" key={item.id}>
               <div className="article-item-top-techList text-gray-400">{item.cate_name}</div>
               {category_list.length === 1 ? '' : index === category_list.length - 1 ? '' : (<div className="article-item-top-techList text-gray-400">{'•'}</div>)}

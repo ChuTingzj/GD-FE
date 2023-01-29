@@ -2,6 +2,7 @@ import type { MenuProps } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { PenIcon, NoteBookIcon, CodeIcon } from '@/components'
+import { exclude_on_click } from '@/utils'
 const nav = ['Main.TopBar.list.1', 'Main.TopBar.list.2', 'Main.TopBar.list.3', 'Main.TopBar.list.4', 'Main.TopBar.list.5']
 
 export const useTopBar = () => {
@@ -25,9 +26,7 @@ export const useTopBar = () => {
     }
   ]
   const onNavItemClick = (event: MouseEvent) => {
-    const siblings = Array.from((event.target as HTMLElement).parentNode?.childNodes ?? []);
-    siblings.forEach(item => (item as HTMLElement).classList.remove('clicked'));
-    (event.target as HTMLElement).classList.add('clicked')
+    exclude_on_click(event)
   }
   const goHome = () => navigate('/')
   return {
