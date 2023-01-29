@@ -1,12 +1,12 @@
-import { TagBar, ArticleList } from './components'
-import { useTagBar } from './hooks'
+import {TagBar, ArticleList} from "./components";
+import {useTagBar} from "./hooks";
 export default function Main() {
-  const { tags, onTagItemClick } = useTagBar()
+	const {tags, onTagItemClick} = useTagBar();
 
-  return (
-    <>
-      <TagBar tags={tags} onTagItemClick={onTagItemClick} />
-      <ArticleList />
-    </>
-  )
+	return (
+		<>
+			<TagBar tags={tags} onTagItemClick={onTagItemClick as any} />
+			<ArticleList />
+		</>
+	);
 }
