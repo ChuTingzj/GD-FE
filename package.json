@@ -10,7 +10,6 @@
 	"scripts": {
 		"install:husky": "husky install",
 		"lint:pretty": "pretty-quick --staged",
-		"prepare": "pnpm run install:husky",
 		"dev": "vite",
 		"coverage": "vitest run --coverage",
 		"test:watch": "vitest",
