@@ -1,35 +1,49 @@
 {
-  "Main": {
-    "TopBar": {
-      "title": "Technical Forum",
-      "list": {
-        "1": "Home",
-        "2": "Q&A",
-        "3": "Spec",
-        "4": "Tag",
-        "5": "Find"
-      },
-      "hint": "Please type in keyword",
-      "DropDownMenu": {
-        "title": "Creator Center",
-        "menu": {
-          "1": "writing",
-          "2": "noting",
-          "3": "coding"
-        }
-      }
-    },
-    "TagBar": {
-      "1": "BackEnd",
-      "2": "FrontEnd",
-      "3": "Android",
-      "4": "IOS",
-      "5": "AI",
-      "6": "DevTools",
-      "7": "CodeLife",
-      "8": "Reading",
-      "9": "synthesize",
-      "10": "followed"
-    }
-  }
+	"Main": {
+		"TopBar": {
+			"title": "Technical Forum",
+			"list": {
+				"1": "Home",
+				"2": "Q&A",
+				"3": "Spec",
+				"4": "Tag",
+				"5": "Find"
+			},
+			"hint": "Please type in keyword",
+			"DropDownMenu": {
+				"title": "Creator Center",
+				"menu": {
+					"1": "writing"
+				}
+			}
+		},
+		"TagBar": {
+			"1": "BackEnd",
+			"2": "FrontEnd",
+			"3": "Android",
+			"4": "IOS",
+			"5": "AI",
+			"6": "DevTools",
+			"7": "CodeLife",
+			"8": "Reading",
+			"9": "synthesize",
+			"10": "followed"
+		},
+		"Article": {
+			"FilterList": {
+				"1": "recommended",
+				"2": "latest",
+				"3": "hottest"
+			},
+			"HotTag": {
+				"title": "Hot tag"
+			},
+			"HotContent": {
+				"title": "Hot content"
+			}
+		}
+	},
+	"Editor": {
+		"placeholder": "Please type in your article title..."
+	}
 }
