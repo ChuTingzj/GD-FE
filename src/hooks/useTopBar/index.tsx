@@ -1,8 +1,11 @@
 import type {MenuProps} from "antd";
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import {useTranslation} from "react-i18next";
 import {PenIcon} from "@/components";
-import {exclude_on_click} from "@/utils";
+import type {AppDispatch} from "@/store";
+import {changeShowLogin} from "@/store/features";
+import {exclude_on_click, isAuthorized} from "@/utils";
 const nav = [
 	"Main.TopBar.list.1",
 	"Main.TopBar.list.2",
@@ -14,6 +17,7 @@ const nav = [
 export const useTopBar = () => {
 	const {t} = useTranslation();
 	const navigate = useNavigate();
+	const dispatch = useDispatch<AppDispatch>();
 	const dropDownItems: MenuProps["items"] = [
 		{
 			label: t("Main.TopBar.DropDownMenu.menu.1"),
@@ -28,11 +32,19 @@ export const useTopBar = () => {
 		exclude_on_click(event);
 	};
 	const goHome = () => navigate("/");
+	const onAvatarClick = () => {
+		if (isAuthorized()) {
+			navigate("/userDetail");
+		} else {
+			dispatch(changeShowLogin(true));
+		}
+	};
 	return {
 		nav,
 		dropDownItems,
 		onNavItemClick,
 		onMenuItemClick,
+		onAvatarClick,
 		goHome,
 	};
 };

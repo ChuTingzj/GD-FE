@@ -30,3 +30,6 @@ body {
 .directory::-webkit-scrollbar-track {
 	background-color: transparent;
 }
+.ant-input::-webkit-input-placeholder {
+	color: #9ca3af;
+}

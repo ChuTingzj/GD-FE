@@ -41,9 +41,38 @@
 			"HotContent": {
 				"title": "Hot content"
 			}
+		},
+		"Login": {
+			"title": "Log in and enjoy more rights and interests",
+			"value": "Login",
+			"ways": {
+				"1": "By Password",
+				"2": "By Verification Code",
+				"3": "By QRcode",
+				"4": "Forget?",
+				"5": "Others"
+			},
+			"addonBefore": {
+				"1": "China"
+			},
+			"inputHint": {
+				"password": {
+					"1": "Type in your email/phone number",
+					"2": "Type in password"
+				},
+				"code": {
+					"1": "Type in your phone number",
+					"2": "Type in code",
+					"3": "Get code"
+				}
+			}
 		}
 	},
 	"Editor": {
-		"placeholder": "Please type in your article title..."
+		"placeholder": "Please type in your article title...",
+		"action": {
+			"1": "Publish",
+			"2": "Save"
+		}
 	}
 }

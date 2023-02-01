@@ -1,10 +1,9 @@
-import { useReachBottom } from '@/hooks'
-import RouterView from "./router"
+import {useReachBottom, useTheme} from "@/hooks";
+import RouterView from "./router";
 function App() {
-  useReachBottom()
-  return (
-    <RouterView />
-  )
+	useReachBottom();
+	useTheme();
+	return <RouterView />;
 }
 
-export default App
+export default App;

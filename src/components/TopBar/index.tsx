@@ -10,11 +10,12 @@ interface TopBarProps {
 	onNavItemClick: MouseEventHandler;
 	dropDownItems: MenuProps["items"];
 	onMenuItemClick: MenuProps["onClick"];
+	onAvatarClick: () => void;
 	goHome: () => void;
 }
 export const TopBar: FC<TopBarProps> = (props) => {
 	const {t, i18n} = useTranslation();
-	const {nav, onNavItemClick, dropDownItems, goHome, onMenuItemClick} = props;
+	const {nav, onNavItemClick, dropDownItems, goHome, onMenuItemClick, onAvatarClick} = props;
 	return (
 		<div className="bg-white grid grid-cols-3 items-center p-y-3 normal-transition relative dark:bg-dark">
 			<div className="normal-flex gap-2">
@@ -52,7 +53,7 @@ export const TopBar: FC<TopBarProps> = (props) => {
 					<div onClick={() => i18n.changeLanguage(i18n.language === "en" ? "zh" : "en")}>
 						<I18nIcon className="cursor-pointer" />
 					</div>
-					<div className="cursor-pointer">
+					<div className="cursor-pointer" onClick={onAvatarClick}>
 						<Avatar icon={<UserOutlined />}></Avatar>
 					</div>
 				</div>

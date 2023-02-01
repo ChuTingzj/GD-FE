@@ -3,7 +3,7 @@ import {TopBar} from "@/components";
 import {useTopBar} from "@/hooks";
 import {MouseEventHandler} from "react";
 export default function Home() {
-	const {nav, onNavItemClick, dropDownItems, goHome, onMenuItemClick} = useTopBar();
+	const {nav, onNavItemClick, dropDownItems, goHome, onMenuItemClick, onAvatarClick} = useTopBar();
 	return (
 		<>
 			<TopBar
@@ -12,6 +12,7 @@ export default function Home() {
 				onMenuItemClick={onMenuItemClick}
 				nav={nav}
 				onNavItemClick={onNavItemClick as any as MouseEventHandler}
+				onAvatarClick={onAvatarClick}
 			/>
 			<Outlet />
 		</>

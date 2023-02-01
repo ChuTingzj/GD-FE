@@ -10,8 +10,8 @@ export default function Editor() {
 			<div className="normal-flex p-2">
 				<Input className="text-2xl" bordered={false} placeholder={t("Editor.placeholder")} />
 				<div className="normal-flex gap-2">
-					<Button type="primary">发布</Button>
-					<Button>存草稿</Button>
+					<Button type="primary">{t("Editor.action.1")}</Button>
+					<Button>{t("Editor.action.2")}</Button>
 				</div>
 			</div>
 			<MDEditor value={value} onChange={onChange}></MDEditor>
