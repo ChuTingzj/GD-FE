@@ -21,10 +21,15 @@ export const useLoginWay = () => {
 			</Option>
 		</Select>
 	);
-	const loginByOthers = [<GithubOutlined />];
 	const authorizeByGithub = () => {
 		location.href = `https://github.com/login/oauth/authorize?client_id=983cf4b3feff31bba087&redirect_uri=http://124.223.56.117:3000/authorize`;
 	};
+	const loginByOthers = [
+		{
+			icon: <GithubOutlined />,
+			onClick: authorizeByGithub,
+		},
+	];
 	return {
 		mode,
 		changeMode,

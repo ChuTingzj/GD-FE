@@ -35,8 +35,8 @@ export const LoginWay: FC = () => {
 				<div className="flex items-center">
 					<div>{t("Main.Login.ways.5")}：</div>
 					{loginByOthers.map((item, index) => (
-						<div key={index} className="cursor-pointer">
-							{item}
+						<div key={index} className="cursor-pointer" onClick={item.onClick}>
+							{item.icon}
 						</div>
 					))}
 				</div>
