@@ -16,6 +16,7 @@ export const ArticleList: FC = () => {
 	const token = searchParams.get("id");
 	if (token) {
 		localStorage.setItem("simple_token", token);
+		location.reload();
 	}
 	return (
 		<div className="relative mt-4">
