@@ -4,9 +4,11 @@ import type {MenuProps} from "antd";
 import {SlackCircleFilled, DownOutlined, UserOutlined} from "@ant-design/icons";
 import {useTranslation} from "react-i18next";
 import {ThemeSwitch, I18nIcon} from "@/components";
+import type {UserEntity} from "@/api";
 const {Search} = Input;
 interface TopBarProps {
 	nav: Array<string>;
+	userInfo: UserEntity | null | undefined;
 	onNavItemClick: MouseEventHandler;
 	dropDownItems: MenuProps["items"];
 	onMenuItemClick: MenuProps["onClick"];
@@ -15,7 +17,8 @@ interface TopBarProps {
 }
 export const TopBar: FC<TopBarProps> = (props) => {
 	const {t, i18n} = useTranslation();
-	const {nav, onNavItemClick, dropDownItems, goHome, onMenuItemClick, onAvatarClick} = props;
+	const {nav, onNavItemClick, userInfo, dropDownItems, goHome, onMenuItemClick, onAvatarClick} =
+		props;
 	return (
 		<div className="bg-white grid grid-cols-3 items-center p-y-3 normal-transition relative dark:bg-dark">
 			<div className="normal-flex gap-2">
@@ -54,7 +57,9 @@ export const TopBar: FC<TopBarProps> = (props) => {
 						<I18nIcon className="cursor-pointer" />
 					</div>
 					<div className="cursor-pointer" onClick={onAvatarClick}>
-						<Avatar icon={<UserOutlined />}></Avatar>
+						<Avatar
+							icon={userInfo?.avatar ? "" : <UserOutlined />}
+							src={userInfo?.avatar ? userInfo.avatar : ""}></Avatar>
 					</div>
 				</div>
 			</div>

@@ -1,4 +1,5 @@
 import type {FC} from "react";
+import {useSearchParams} from "react-router-dom";
 import {Empty} from "antd";
 import {useTranslation} from "react-i18next";
 import {useArticleList} from "@/pages/Main/hooks";
@@ -11,6 +12,11 @@ export const ArticleList: FC = () => {
 		hotContent: {imgList, hotContentList, hotColorList},
 	} = useArticleList();
 	const {t} = useTranslation();
+	const [searchParams] = useSearchParams();
+	const token = searchParams.get("id");
+	if (token) {
+		localStorage.setItem("simple_token", token);
+	}
 	return (
 		<div className="relative mt-4">
 			<div className="absolute left-1/2 -translate-x-1/2 w-1000p">
