@@ -21,6 +21,7 @@ export const useTopBar = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data: userInfo} = useGetUserQuery(id);
+	localStorage.setItem("userInfo", JSON.stringify(userInfo ?? {}));
 	const dropDownItems: MenuProps["items"] = [
 		{
 			label: t("Main.TopBar.DropDownMenu.menu.1"),

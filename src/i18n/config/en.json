@@ -44,7 +44,7 @@
 		},
 		"Login": {
 			"title": "Log in and enjoy more rights and interests",
-			"value": "Login",
+			"value": "Log in/Sign in",
 			"ways": {
 				"1": "By Password",
 				"2": "By Verification Code",

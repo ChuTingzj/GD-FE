@@ -53,7 +53,11 @@ export const TopBar: FC<TopBarProps> = (props) => {
 				</Dropdown.Button>
 				<div className="normal-flex gap-6">
 					<ThemeSwitch />
-					<div onClick={() => i18n.changeLanguage(i18n.language === "en" ? "zh" : "en")}>
+					<div
+						onClick={() => {
+							localStorage.setItem("lng", i18n.language === "en" ? "zh" : "en");
+							i18n.changeLanguage(i18n.language === "en" ? "zh" : "en");
+						}}>
 						<I18nIcon className="cursor-pointer" />
 					</div>
 					<div className="cursor-pointer" onClick={onAvatarClick}>

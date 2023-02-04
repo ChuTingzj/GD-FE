@@ -15,7 +15,7 @@ export const ArticleList: FC = () => {
 	const [searchParams] = useSearchParams();
 	const token = searchParams.get("id");
 	const local_token = localStorage.getItem("simple_token");
-	if (token && !local_token) {
+	if (token && local_token !== token) {
 		localStorage.setItem("simple_token", token);
 		location.reload();
 	}

@@ -4,14 +4,30 @@ import {useTranslation} from "react-i18next";
 import {useLoginWay} from "./hooks";
 export const LoginWay: FC = () => {
 	const {t} = useTranslation();
-	const {mode, addonBefore, loginByOthers, changeMode} = useLoginWay();
+	const {
+		account,
+		password,
+		mode,
+		addonBefore,
+		loginByOthers,
+		changeMode,
+		signInOrLoginByPassword,
+		onAccountChange,
+		onPasswordChange,
+	} = useLoginWay();
 	return (
 		<>
 			{mode === "password" ? (
 				<>
 					<div className="login-left-title">{t("Main.Login.ways.1")}</div>
-					<Input placeholder={t("Main.Login.inputHint.password.1")} />
+					<Input
+						placeholder={t("Main.Login.inputHint.password.1")}
+						value={account}
+						onChange={onAccountChange}
+					/>
 					<Input.Password
+						value={password}
+						onChange={onPasswordChange}
 						addonAfter={
 							<Button size="small" type="link">
 								{t("Main.Login.ways.4")}
@@ -19,6 +35,9 @@ export const LoginWay: FC = () => {
 						}
 						placeholder={t("Main.Login.inputHint.password.2")}
 					/>
+					<Button type="primary" onClick={signInOrLoginByPassword}>
+						{t("Main.Login.value")}
+					</Button>
 				</>
 			) : (
 				<>
@@ -28,9 +47,9 @@ export const LoginWay: FC = () => {
 						addonAfter={<Button type="link">{t("Main.Login.inputHint.code.3")}</Button>}
 						placeholder={t("Main.Login.inputHint.code.2")}
 					/>
+					<Button type="primary">{t("Main.Login.value")}</Button>
 				</>
 			)}
-			<Button type="primary">{t("Main.Login.value")}</Button>
 			<div className="login-other flex justify-between items-center">
 				<div className="flex items-center">
 					<div>{t("Main.Login.ways.5")}：</div>

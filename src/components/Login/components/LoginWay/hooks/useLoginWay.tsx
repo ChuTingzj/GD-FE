@@ -1,16 +1,22 @@
 import {useState} from "react";
-import {Select} from "antd";
+import {Select, message, type InputProps} from "antd";
 import {GithubOutlined} from "@ant-design/icons";
 import {useTranslation} from "react-i18next";
+import {type loginByPasswordRes, useLoginByPasswordMutation} from "@/api";
 const {Option} = Select;
 export const enum LoginMode {
 	"code",
 	"password",
 }
 export const useLoginWay = () => {
+	const [account, setAccount] = useState<string>("");
+	const [password, setPassword] = useState<string>("");
 	const [mode, setMode] = useState<keyof typeof LoginMode>("password");
 	const {t} = useTranslation();
+	const [trigger] = useLoginByPasswordMutation();
 	const changeMode = (mode: keyof typeof LoginMode) => setMode(mode);
+	const onAccountChange: InputProps["onChange"] = (e) => setAccount(e.target.value);
+	const onPasswordChange: InputProps["onChange"] = (e) => setPassword(e.target.value);
 	const addonBefore = (
 		<Select defaultValue={86}>
 			<Option value={86}>
@@ -30,11 +36,28 @@ export const useLoginWay = () => {
 			onClick: authorizeByGithub,
 		},
 	];
+	const signInOrLoginByPassword = async () => {
+		const res = await trigger({account, password});
+		if (Reflect.has(res, "data")) {
+			const response = res as {data: loginByPasswordRes};
+			if (response.data.success) {
+				localStorage.setItem("simple_token", response.data.data);
+				location.reload();
+			} else {
+				message.error(response.data.message);
+			}
+		}
+	};
 	return {
+		account,
+		password,
 		mode,
-		changeMode,
 		addonBefore,
+		changeMode,
+		onAccountChange,
+		onPasswordChange,
 		loginByOthers,
 		authorizeByGithub,
+		signInOrLoginByPassword,
 	};
 };
