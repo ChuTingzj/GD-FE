@@ -5,7 +5,8 @@
 	"type": "module",
 	"author": {
 		"email": "zhangjing1024798@gmail.com",
-		"url": "https://github.com/ChuTingzj"
+		"url": "https://github.com/ChuTingzj",
+		"name": "zhangjing"
 	},
 	"scripts": {
 		"install:husky": "husky install",
@@ -20,9 +21,10 @@
 		"preview": "vite preview",
 		"check:modules": "depcheck --ignore-dirs=dist,.history"
 	},
-	"packageManager": "pnpm",
+	"packageManager": "pnpm@8.3.1",
 	"dependencies": {
 		"@ant-design/icons": "^4.8.0",
+		"@console1024/utils": "^3.1.1",
 		"@reduxjs/toolkit": "^1.9.1",
 		"@uiw/react-md-editor": "^3.20.2",
 		"antd": "^5.0.7",
@@ -51,7 +53,7 @@
 		"prettier": "^2.8.3",
 		"pretty-quick": "^3.1.3",
 		"react-test-renderer": "^18.2.0",
-		"typescript": "5.0.0-beta",
+		"typescript": "5.0.4",
 		"unocss": "^0.49.1",
 		"vite": "^4.0.4",
 		"vitest": "^0.28.3"

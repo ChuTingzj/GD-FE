@@ -37,6 +37,7 @@ export const useLoginWay = () => {
 		},
 	];
 	const signInOrLoginByPassword = async () => {
+		if (!account || !password) return message.error("请填写账号和密码!");
 		const res = await trigger({account, password});
 		if (Reflect.has(res, "data")) {
 			const response = res as {data: loginByPasswordRes};

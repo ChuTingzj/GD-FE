@@ -1,0 +1,30 @@
+name: "My custom profile" # Profile name
+version: 1.0
+baseProfile: qodana.starter # Use the 'empty' profile as initial configuration of this profile
+include:
+  - name: Eslint
+groups: # List of configured groups
+  - groupId: StyleCategories
+    groups:
+      - "category:CSS" # Inspection category from the linter
+      - "category:Sass/SCSS" # Inspection category from the linter
+      - "category:Less" # Inspection category from the linter
+  - groupId: JSCategories
+    groups:
+      - "category:JavaScript and TypeScript/ES2015 migration aids"
+  - groupId: MDCategories
+    groups:
+      - "category:MarkDown"
+  - groupId: JSONCategories
+    groups:
+      - "category:JSON and JSON5"
+
+inspections: # Group invocation
+  - group: StyleCategories
+    enabled: true # Enable the StyleCategories group
+  - group: JSCategories
+    enabled: true # Enable the JSCategories group
+  - group: MDCategories
+    enabled: true # Enable the MDCategories group
+  - group: JSONCategories
+    enabled: true # Enable the JSONCategories group

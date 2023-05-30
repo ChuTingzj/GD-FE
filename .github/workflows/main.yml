@@ -7,7 +7,6 @@ on:
       - master
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +15,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3.6.0
         with:
-          node-version: '14.17.6'
+          node-version: "14.17.6"
       - name: Install npm dependencies
         run: npm install
       - name: Run build task
@@ -25,8 +24,8 @@ jobs:
         uses: easingthemes/ssh-deploy@v4.0.5
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GD_FE }}
-          ARGS: '-rltgoDzvO --delete'
+          ARGS: "-rltgoDzvO --delete"
           SOURCE: dist # 这是要复制到服务器的文件夹名称
-          REMOTE_HOST: '124.223.56.117' # 公网地址
+          REMOTE_HOST: "124.223.56.117" # 公网地址
           REMOTE_USER: root # 登录后默认为 root 用户
           TARGET: /www/wwwroot/GD-FE/ # 打包后的 dist 文件夹
