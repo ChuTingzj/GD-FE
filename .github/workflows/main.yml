@@ -1,6 +1,7 @@
 name: Build app and deploy to tencent
 on:
   #监听push操作
+  pull_request:
   push:
     branches:
       # master分支，你也可以改成其他分支
