@@ -1,6 +1,6 @@
 import {useDispatch} from "react-redux";
 import type {AppDispatch} from "@/store";
-import {throttle} from "@console1024/utils";
+import {throttle} from "@/utils";
 import {changeIsReachBottom} from "@/store/features";
 export const useReachBottom = () => {
 	const dispatch = useDispatch<AppDispatch>();

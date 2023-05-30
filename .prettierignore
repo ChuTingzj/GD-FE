@@ -11,3 +11,5 @@ dist
 .husky
 .local
 /bin
+*.yaml
+*.yml
